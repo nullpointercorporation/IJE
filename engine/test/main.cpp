@@ -9,6 +9,8 @@
 
 #include "game.h"
 #include "environment.h"
+#include "color.h"
+#include "rect.h"
 
 using namespace std;
 
@@ -49,16 +51,23 @@ private:
                         break;
 
                     case SDLK_UP:
-                        m_w += 100;
-                        m_h += 100;
-                        env->video->set_resolution(m_w, m_h);
+						{
+						Color lr(0,0,255);
+						Rect  r(0,0,300,300 ,lr);
+						env->video->clear();
+						r.draw( env->video->getScreen());
+						env->video->updateScreen();
                         break;
-
-                    case SDLK_DOWN:
-                        m_w -= 100;
-                        m_h -= 100;
-                        env->video->set_resolution(m_w, m_h);
+						}
+					case SDLK_DOWN:
+						{
+						Color lj(0,255,255);
+						Rect  j(0,0,200,300 ,lj);
+						env->video->clear();
+						j.draw( env->video->getScreen());
+						env->video->updateScreen();
                         break;
+						}
                 }
             }
         }

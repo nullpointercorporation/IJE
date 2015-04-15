@@ -98,5 +98,16 @@ void
 Video::clear() const
 {
     SDL_RenderClear(m_renderer);
+}
+
+void 
+Video::updateScreen() const
+{
     SDL_RenderPresent(m_renderer);
+}
+
+SDL_Renderer* 
+Video::getScreen() const
+{
+	return m_renderer;
 }

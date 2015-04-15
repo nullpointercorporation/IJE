@@ -28,6 +28,8 @@ public:
     void set_fullscreen(bool fullscreen = true) throw (Exception);
     void set_window_name(const string& name);
     void clear() const;
+	void updateScreen() const;
+	SDL_Renderer* getScreen() const;
 
     pair<int, int> get_resolution() const;
 
